@@ -1,6 +1,6 @@
 ﻿Console.Write("Введите число дня недели: ");
 int day = int.Parse(Console.ReadLine());
-if (day > 0 & day < 8)
+while (day > 0 & day < 8)
 {
     if (day < 6)
         {
@@ -11,7 +11,4 @@ if (day > 0 & day < 8)
             Console.WriteLine("Day off");
         }
 }
-else
-{
-    Console.WriteLine("Day is absent");
-}
+Console.WriteLine("Day is absent");
