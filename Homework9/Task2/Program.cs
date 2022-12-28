@@ -1,10 +1,7 @@
-﻿int[,] matrix = new int[5, 4];
+﻿int[,] matrix = new int[4, 3];
 FillArrayRandom(matrix);
 PrintArray(matrix);
-int sum = 0;
-int sumString = 0;
-SumString(matrix);
-Console.WriteLine(sum);
+MinSumStr(matrix);
 
 void FillArrayRandom(int[,] array)
 {
@@ -12,7 +9,7 @@ void FillArrayRandom(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next (1, 10);
+            array[i, j] = Random.Shared.Next(1, 10);
         }
     }
 }
@@ -29,13 +26,25 @@ void PrintArray(int[,] array)
     }
 }
 
-void SumString(int[,] array)
+void MinSumStr(int[,] array)
 {
+    int minSum = 0;
+    for (int i = 0; i < array.GetLength(0) - 1; i++)
+    {
+        minSum += array[0, i];
+    }
+    int sumString = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            sum += matrix[i, j];    
+            sumString += array[i, j];
         }
+        if (sumString < minSum)
+        {
+            minSum = sumString;
+        }
+        sumString = 0;
     }
+    Console.WriteLine($"Минимальная сумма строки равна {minSum}");
 }
