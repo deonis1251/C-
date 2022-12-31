@@ -6,12 +6,13 @@ Console.WriteLine(SumNumbers(firstNumber, secondNumber));
 
 int SumNumbers(int a, int b)
 {
-    a = firstNumber;
-    b = secondNumber;
-    if(a > b)
+	int temp = 0;
+	if (a > b)
 	{
-		b = firstNumber;
-		a = secondNumber;
+		temp = a;
+		a = b;
+		b = temp;
 	}
-	return (b + a)*(b - a + 1)/2; // по формуле суммы членов арифметической прогрессии
+	if (b == a) return 0;
+	else return (b + a)*(b - a + 1)/2;
 }
