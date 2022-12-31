@@ -13,6 +13,6 @@ int SumNumbers(int a, int b)
 		a = b;
 		b = temp;
 	}
-	if (b == a) return 0;
+	if (b == a) return a | b;
 	else return (b + a)*(b - a + 1)/2;
 }

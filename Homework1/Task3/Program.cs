@@ -4,6 +4,6 @@ for(int n = 1; n <= m; n++)
 {
     if(n % 2 == 0) 
     {
-        Console.WriteLine(n);
+        Console.Write(n + " ");
     }
 }

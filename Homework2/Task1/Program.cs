@@ -10,6 +10,7 @@ else
 {
    result = ((a / 10) % 10);
 }
+Console.WriteLine(result);
     if (result < 0)
     {
         Console.Write("");
